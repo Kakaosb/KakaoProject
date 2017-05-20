@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html ng-app>
+<html ng-app="kakaoApp">
 <head>
     <title>Kakao Developer</title>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="literalController">
     <div class="page-container">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="_container">
@@ -21,31 +21,44 @@
 
         <div class="form-horizontal">
             <div class="form-group">
-                <textarea id="textArea" ng-model="literalArray" placeholder="Текст набирать здесь..."> </textarea>
+                <textarea id="textArea" ng-model="literalArray" ng-change="addL()" placeholder="Текст набирать здесь..."> </textarea>
             </div>
         </div>
+
+        <h1>{{literalArray}}!</h1>
+        <h1>{{CountA}}!</h1>
+        <h1> {{CountB}}!</h1>
+        <h1> {{CountC}}!</h1>
     </div>
 
 
     <script>
-        var purchaseApp = angular.module("kakaoApp", []);
+            var purchaseApp = angular.module("kakaoApp", []);
+        
+            purchaseApp.controller("literalController", function ($scope, $q) {
+                $scope.literalArray;
+                $scope.CountA;
+                $scope.CountB;
+                $scope.CountC;
 
-        purchaseApp.controller("literalController", function ($scope, $q) {
-            $scope.literalArray = [];
+                $scope.addL = function () {
+                    var array = $scope.literalArray;
 
-            $scope.addItem = function (literal) {
+                    $scope.CountA = array.split("a").length - 1;
+                    $scope.CountB = array.split("b").length - 1;
+                    $scope.CountC = array.split("c").length - 1;
 
-                $scope.literalArray.push(literal);
-                console.log($scope.literalArray);
+                 
+                };
 
+                //$scope.A = $scope.literalArray.split("a").length - 1;
+                //$scope.B = $scope.literalArray.split("b").length - 1;
+                //$scope.C = $scope.literalArray.split("c").length - 1;
 
-            }
-
-            $("#textArea").on("input", function (char) {
-                $scope.addItem();
-                console.log(char + "sdsd");
             });
-        });
+
+
     </script>
 </body>
+
 </html>
