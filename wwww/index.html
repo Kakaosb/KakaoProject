@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+    <title>Kakao Developer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="_container">
+                <div class="navbar-header">
+                    <img id="CocaoLogo" src="Images/cocao.png" />
+                    <h1 style="padding-top: 72px;">Kakao Developer</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <textarea id="textArea" ng-model="literalArray" placeholder="Текст набирать здесь..."> </textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var purchaseApp = angular.module("kakaoApp", []);
+
+        purchaseApp.controller("literalController", function ($scope, $q) {
+            $scope.literalArray = [];
+
+            $scope.addItem = function (literal) {
+
+                $scope.literalArray.push(literal);
+                console.log($scope.literalArray);
+
+
+            }
+
+            $("#textArea").on("input", function (char) {
+                $scope.addItem();
+                console.log(char + "sdsd");
+            });
+        });
+    </script>
+</body>
+</html>
