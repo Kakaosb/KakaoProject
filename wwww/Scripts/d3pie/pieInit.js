@@ -8,8 +8,8 @@
             },
             "subtitle": {
                 "color": "#f5deb3",
-                "fontSize": 12,
-                "font": "open sans"
+                "fontSize": 18,                
+                "text": "Lower case only!"
             },
             "titleSubtitlePadding": 9
         },
@@ -27,17 +27,17 @@
             "sortOrder": "value-desc",
             "content": [
                 {
-                    "label": "A",
+                    "label": "a",
                     "value": countA,
                     "color": "#990000"
                 },
                 {
-                    "label": "B",
+                    "label": "b",
                     "value": countB,
                     "color": "#660000"
                 },
                 {
-                    "label": "C",
+                    "label": "c",
                     "value": countC,
                     "color": "#330000"
                 }
@@ -72,7 +72,7 @@
         },
         "effects": {
             "pullOutSegmentOnClick": {
-                "effect": "linear",
+                "effect": "none",
                 "speed": 400,
                 "size": 8
             }

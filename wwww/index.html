@@ -45,13 +45,14 @@
                 <div class="col-md-4">
                     <div class="form-horizontal" style="margin-top: 60px;">
                         <div class="form-group">
-                            <textarea id="textArea" ng-model="lettersArray" placeholder="Enter english text here..." ng-change="addLetters()"></textarea>
+                            <textarea id="textArea" ng-model="lettersArray" placeholder="Enter english text here..." ng-change="addLetters()">                                                               
+                            </textarea>
                         </div>
                     </div>
 
-                    <h3>Count A = {{CountA}}</h3>
-                    <h3>Count B = {{CountB}}</h3>
-                    <h3>Count C = {{CountC}}</h3>
+                    <h3>Count a = {{CountA}}</h3>
+                    <h3>Count b = {{CountB}}</h3>
+                    <h3>Count c = {{CountC}}</h3>
                     <br />
                     <br />
 
@@ -70,9 +71,9 @@
         </div>
         <script>
             var kakaoApp = angular.module("kakaoApp", []);
-
+                      
             kakaoApp.controller("lettersController", function ($scope, $q) {
-                $scope.lettersArray = "";
+                $scope.lettersArray = "William Shakespeare was baptized on April 26, 1564, in Stratford-upon-Avon, England. From roughly 1594 onward he was an important member of the Lord Chamberlain’s Men company of theatrical players";
                 $scope.CountA = 0;
                 $scope.CountB = 0;
                 $scope.CountC = 0;
@@ -80,7 +81,7 @@
                 $scope.$watchGroup(['CountA', 'CountB', 'CountC'], function () {
                     reDrawChart();
                 });
-
+                           
                 $scope.addLetters = function () {
                     var array = $scope.lettersArray;
 
@@ -89,6 +90,8 @@
                     $scope.CountC = GetCountLettersInText(array, "c");
                 };
 
+                $scope.addLetters();
+
                 function reDrawChart() {
                     $("#pieChart").empty();
 
@@ -96,8 +99,7 @@
                 };
 
                 function GetCountLettersInText(text, char) {
-                    return text
-                        .toLowerCase()
+                    return text                        
                         .split(char)
                         .length - 1;
                 }

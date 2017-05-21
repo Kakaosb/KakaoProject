@@ -41,5 +41,9 @@ textarea {
 }
 
 #contacts{
-    margin-top: 20px;
+    margin-top: 35px;
+}
+
+#CocaoLogo{
+background-image: url('../images/cacao.png');
 }
