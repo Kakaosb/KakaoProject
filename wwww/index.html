@@ -20,18 +20,20 @@
             <div class="_container">
                 <div class="navbar-header">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <img id="CocaoLogo" src="Images/cocao.png" />
-                            <h1 style="padding-top: 72px;">Kakao Developer</h1>
+                            <h1 id="title">Kakao Developer</h1>
                         </div>
-                        <div class="col-md-6 left" id="contacts">
+                        <div class="col-md-4 col-sm-4 col-xs-2" id="contacts">
                             <ul>
                                 <li>email: kakaosb@yandex.ru</li>
                                 <li>skype: Kakao Developer</li>
                                 <li>phone: +7(909)753-66-13</li>
-                            </ul>
-                        </div>
-                        Language: Eng
+                            </ul>                             
+                        </div> 
+                        <div class="col-md-2 col-sm-4 col-xs-2">
+                            Language: Eng
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -39,25 +41,24 @@
         <div class="content">
             <br />
             <br />
-            <h2>Count letters in a text</h2>
+            <h2>Count letters in a text:</h2>
 
             <div class="row">
-                <div class="col-md-4">
-                    <div class="form-horizontal" style="margin-top: 60px;">
+                <div class="col-md-5">
+                    <div class="form-horizontal" style="margin-top: 15px;">
                         <div class="form-group">
-                            <textarea id="textArea" ng-model="lettersArray" placeholder="Enter english text here..." ng-change="addLetters()">                                                               
-                            </textarea>
+                            <textarea id="textArea" ng-model="lettersArray" placeholder="Enter english text here..." ng-change="addLetters()"></textarea>
                         </div>
                     </div>
 
-                    <h3>Count a = {{CountA}}</h3>
-                    <h3>Count b = {{CountB}}</h3>
-                    <h3>Count c = {{CountC}}</h3>
+                    <h3>a = {{CountA}}</h3>
+                    <h3>b = {{CountB}}</h3>
+                    <h3>c = {{CountC}}</h3>
                     <br />
                     <br />
 
 
-                    <ul>
+                    <ul id="tUsed">
                         Technologies used:
                         <li>AngularJS</li>
                         <li>D3.js</li>
@@ -73,12 +74,13 @@
             var kakaoApp = angular.module("kakaoApp", []);
                       
             kakaoApp.controller("lettersController", function ($scope, $q) {
-                $scope.lettersArray = "William Shakespeare was baptized on April 26, 1564, in Stratford-upon-Avon, England. From roughly 1594 onward he was an important member of the Lord Chamberlain’s Men company of theatrical players";
+                $scope.lettersArray = "The cocoa bean, also called cacao bean, cocoa, and cacao, is the dried and fully fermented seed of Theobroma cacao, from which cocoa solids and, because of the seed's fat, cocoa butter can be extracted. The 'beans' are the basis of chocolate, and of such Mesoamerican foods as mole and tejate.";
                 $scope.CountA = 0;
                 $scope.CountB = 0;
                 $scope.CountC = 0;
 
                 $scope.$watchGroup(['CountA', 'CountB', 'CountC'], function () {
+
                     reDrawChart();
                 });
                            

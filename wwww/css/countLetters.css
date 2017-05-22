@@ -1,4 +1,28 @@
 ﻿#textArea{
     min-width: 600px;
-    min-height: 100px;
+    min-height: 125px;
+}
+
+@media screen and (max-width: 1550px) {
+   #textArea{
+    min-width: 550px;
+}
+}
+
+@media screen and (max-width: 1450px) {
+   #textArea{
+    min-width: 450px;
+}
+}
+
+@media screen and (max-width: 1400px) {
+   #textArea{
+    min-width: 500px;
+}
+}
+
+@media screen and (max-width: 1300px) {
+   #textArea{
+    min-width: 450px;
+}
 }

@@ -12,15 +12,9 @@
                 "text": "Lower case only!"
             },
             "titleSubtitlePadding": 9
-        },
-        "footer": {
-            "color": "#f5deb3",
-            "fontSize": 10,
-            "font": "open sans",
-            "location": "bottom-left"
-        },
+        },      
         "size": {
-            "canvasWidth": 590,
+            "canvasWidth": 380,
             "pieOuterRadius": "90%"
         },
         "data": {
@@ -29,39 +23,39 @@
                 {
                     "label": "a",
                     "value": countA,
-                    "color": "#990000"
+                    "color": "#6fff00"
                 },
                 {
                     "label": "b",
                     "value": countB,
-                    "color": "#660000"
+                    "color": "#306f00"
                 },
                 {
                     "label": "c",
                     "value": countC,
-                    "color": "#330000"
+                    "color": "#aeff6f"
                 }
             ]
         },
         "labels": {
             "outer": {
-                "pieDistance": 32
+                "pieDistance": 15
             },
             "inner": {
-                "hideWhenLessThanPercentage": 3
+                "hideWhenLessThanPercentage": 6
             },
             "mainLabel": {
-                "fontSize": 30,
+                "fontSize": 28,
                 "color": "#f5deb3"
             },
             "percentage": {
                 "color": "#fff",
-                "decimalPlaces": 0,
-                "fontSize": 30
+                "decimalPlaces": 1,
+                "fontSize": 20
             },
             "value": {
                 "color": "#fff",
-                "fontSize": 20
+                "fontSize": 17
             },
             "lines": {
                 "enabled": true
@@ -70,20 +64,11 @@
                 "enabled": true
             }
         },
-        "effects": {
-            "pullOutSegmentOnClick": {
-                "effect": "none",
-                "speed": 400,
-                "size": 8
-            }
-        },
         "misc": {
             "gradient": {
                 "enabled": true,
-                "percentage": 100
+                "percentage":40
             }
         }
-    });
-
-    pieee = pie;
+    });  
 };
